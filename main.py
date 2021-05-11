@@ -9,7 +9,7 @@ import emait
 em = emait.emai
 def menu(x):
   print(pyfiglet.figlet_format("'account maker'"))
-  print ("currently",len(names.lon))
+  hme()
   print ("Github : https://github.com/muki119")
   print("---------------------------------------")
   if x == 2 :
@@ -32,8 +32,8 @@ def creator(q):
    
     
 def create():
-  tn = random.choice(names.lon)+random.choice(names.surn)
-  ran = random.randint(00,10)
+  tn = random.choice(names.lon)+random.choice(names.surn).lower()
+  ran = random.randint(00,100)
   if ran != 00 :
       tn+= str(ran)
   tn += ("@"+random.choice(em))
@@ -48,5 +48,9 @@ def filer (nme):
   with open ("outp.txt","a") as po:
     po.writelines((nme+"\n"))
 
+def hme():
+  print ("currently",len(names.lon),"NAMES WHITH : ",len(names.surn),"surnames. Aswell as ",len(pwerd.pswrd),"passwords and ",len(em ),"emails.In total there are these many combinations: ",
+  (len(names.lon)*len(names.surn)*len(pwerd.pswrd)*len(em )-106238))
 
-menu(1)
+if __name__ == "__main__":
+  menu(1)
